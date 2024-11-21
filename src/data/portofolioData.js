@@ -1,68 +1,72 @@
 export const techStacks = {
   "Programming": ["Python", "JavaScript", "Java", "C/C++", "SQL", "TypeScript", "R", "Swift"],
-  "Web Development": ["React", "Node.js", "REST APIs", "Tailwind CSS"],
-  "Data Science": ["Pandas", "NumPy", "Seaborn", "NLP", "Scikit-learn"],
+  "Web Development": ["React", "Node.js", "REST API", "Tailwind CSS"],
+  "Data Science": ["Pandas", "NumPy", "NLP", "Regression", "Classification", "Clustering", "Data Visualization"],
   "Databases": ["MongoDB", "PostgreSQL"],
   "Tools": ["Git", "Docker", "Jira", "Postman", "Prisma"]
 }
 
 export const projects = [
   {
-    title: "AI Recommendation Engine",
-    description: "Next-gen product recommendations using advanced ML algorithms.",
-    techStack: ["Python", "Machine Learning", "SQL"],
-    category: "Data Science",
-    image: "/placeholder.svg?height=200&width=300",
-    video: "https://example.com/ai-recommendation-demo.mp4",
-    github: "https://github.com/johndoe/ai-recommendation"
+    title: "Scriptorium",
+    description: "Online platform for writing, executing, and sharing code in multiple programming languages.",
+    techStack: ["JavaScript", "TypeScript", "Docker", "Prisma", "React", "SQL", "REST API", "Tailwind CSS"],
+    category: "Software Development",
+    image: "/scriptorium.png?height=200&width=300",
+    // video: "https://example.com/ai-recommendation-demo.mp4",
+    github: "https://github.com/faraazzz31/scriptorium"
   },
   {
-    title: "Quantum Chat",
-    description: "Encrypted chat app leveraging quantum computing principles.",
-    techStack: ["JavaScript", "React", "Node.js", "MongoDB"],
+    title: "A11YMOLY",
+    description: "A web accesibility testing platform parterning with 0 Barriers Foundation to automates WCAG compliance on web applications and PDFs.",
+    techStack: ["React", "Tailwind CSS", "JavaScript", "MongoDB", "Node.js", "REST API"],
     category: "Software Development",
-    image: "/placeholder.svg?height=200&width=300",
-    video: "https://example.com/quantum-chat-demo.mp4",
+    image: "/wcag.jpeg?height=250&width=300",
+    // video: "https://example.com/quantum-chat-demo.mp4",
     github: "https://github.com/johndoe/quantum-chat"
   },
   {
-    title: "NeuroTech Predictor",
-    description: "Neural network-based predictive maintenance for smart factories.",
-    techStack: ["Python", "TensorFlow", "IoT"],
+    title: "Trending Topic Analysis of Twitter Dataset using LDA",
+    description: "Our project used LDA for topic modeling and ChatGPT for labeling topics, with preprocessing steps like expanding contractions and removing URLs. The analysis highlighted political themes in Canadian tweets, and our LDA model with 13 topics achieved a coherence score of 0.576, comparable to a baseline model.",
+    techStack: ["NLP", "Python", "Pandas", "Clustering", "Data Visualization"],
     category: "Data Science",
-    image: "/placeholder.svg?height=200&width=300",
-    video: "https://example.com/neurotech-predictor-demo.mp4",
-    github: "https://github.com/johndoe/neurotech-predictor"
+    image: "/twitter.png?height=200&width=300",
+    video: "https://utoronto-my.sharepoint.com/:p:/g/personal/christoffer_tan_mail_utoronto_ca/ERFqST0jR9lPh2mpN86g3rsB5GDVV9J689D29YB1-RwxfQ?e=3SdBiN",
+    github: "https://github.com/JanisJ2/jsc270-a4"
   },
   {
-    title: "HoloTask",
-    description: "AR-enhanced task management system for the future workspace.",
-    techStack: ["JavaScript", "React", "Three.js", "WebXR"],
+    title: "Meal Planner",
+    description: "Developed a user-friendly application allowing users to input preferences and receive personalized recipe recommendations, complete with a feature to save recipes to their weekly planner. The app also includes a calorie tracker, grocery list, and favorite recipe list for enhanced usability.",
+    techStack: ["Java", "API", "Object Oriented Programming", "Clean Architecture"],
     category: "Software Development",
-    image: "/placeholder.svg?height=200&width=300",
-    github: "https://github.com/johndoe/holotask"
+    image: "/mealmaster.png?height=200&width=300",
+    video: "https://utoronto-my.sharepoint.com/:p:/g/personal/christoffer_tan_mail_utoronto_ca/Eam8mhJz0FBFl7rrl0asS-IBK3FRpEjQH_aSW3auHqQN8Q?e=yNKf2T",
+    github: "https://github.com/ChristofferTan/csc207-project-meal-master"
   }
 ]
 
 export const experiences = [
   {
-    title: "Quantum AI Researcher",
-    company: "FutureTech Labs",
-    period: "2023 - Present",
+    title: "Teaching Assistant (STA130 Fall 2024)",
+    company: "University of Toronto",
+    period: "September 2024 - Present",
+    techStack: ["Data Visualization", "Python", "Pandas", "NumPy", "Regression", "Classification"],
     achievements: [
-      "Developed quantum-enhanced machine learning algorithms",
-      "Led a team in creating a quantum-resistant cryptography system",
-      "Published groundbreaking paper on quantum neural networks"
+      "Facilitated weekly discussion-based tutorials for up to 24 students, developing their understanding of statistical concepts.",
+      "Held office hours every 3 weeks and graded weekly assignments, exams, and projects, providing feedback to support student progress.",
+      "Collaborated with course instructors and fellow TAs on grading standards, course goals, and instructional strategies."
     ]
   },
   {
-    title: "Neuro-Digital Architect",
-    company: "MindWave Innovations",
-    period: "2021 - 2023",
+    title: "Backend Software Engineer Intern",
+    company: "Bang Jamin",
+    period: "June 2024 - August 2024",
+    techStack: ["TypeScript", "NodeJs", "MongoDB", "REST API", "Git", "Jira", "Postman"],
     achievements: [
-      "Designed brain-computer interfaces for immersive AR experiences",
-      "Optimized neural data processing for real-time applications",
-      "Contributed to the development of thought-controlled smart home systems"
+      "Collaborated with cross-functional teams to develop new projects, utilizing Agile methodology with bi-weekly sprints.",
+      "Developed an automated insurance policy generation system via REST API, leading to a 60% efficiency improvement.",
+      "Designed and implemented a new dashboard for 1000+ car dealer users using TypeScript with Node.js (NestJs), enabling CRUD operations on MongoDB and providing real-time data visualization."
     ]
-  }
+
+  },
 ]
