@@ -3,7 +3,7 @@
 import React from "react"
 import {
   Github, Linkedin, Mail, ArrowRight, Briefcase, GraduationCap,
-  LineChart, BrainCircuit, Code2, Server, FileText, Menu, X
+  LineChart, BrainCircuit, Code2, Server, FileText, Menu, X, ExternalLink
 } from "lucide-react"
 
 /**
@@ -149,7 +149,7 @@ export const PROJECTS = [
     link: "https://github.com/faraazzz31/scriptorium",
     image: "/projects/scriptorium.png",
     type: "swe",
-    date: "2024-08-01",
+    date: "2024-12-02",
   },
   {
     title: "Full-Stack Digital Accessibility Platform",
@@ -158,13 +158,13 @@ export const PROJECTS = [
     link: "https://github.com/csc301-2024-f/project-16-0-barriers-foundation",
     image: "/projects/wcag.jpeg",
     type: "swe",
-    date: "2024-06-01",
+    date: "2024-12-02",
   },
   {
     title: "Meal Planning & Calorie Tracking App",
     blurb: "Created a recipe-based meal planner with calorie tracking and personalized suggestions. Applied Clean Architecture, SOLID, and MVC principles in full-stack Java development.",
     tech: ["Java", "MVC", "SOLID", "Design Patterns", "Recipe API"],
-    link: "https://utoronto-my.sharepoint.com/:p:/g/personal/christoffer_tan_mail_utoronto_ca/Eam8mhJz0FBFl7rrl0asS-IBK3FRpEjQH_aSW3auHqQN8Q?e=yNKf2T",
+    link: "https://github.com/ChristofferTan/csc207-project-meal-master",
     image: "/projects/mealmaster.png",
     type: "swe",
     date: "2023-12-01",
@@ -176,7 +176,7 @@ export const PROJECTS = [
     link: "https://github.com/elidle/csc258-drmario",
     image: "/projects/drmario.png",
     type: "swe",
-    date: "2024-12-10",
+    date: "2024-12-01",
   },
 ]
 
@@ -325,6 +325,19 @@ function ProjectsSection() {
   // Defensive: ensure PROJECTS exists
   const all = Array.isArray(PROJECTS) ? PROJECTS : []
 
+  function linkLabel(url = "") {
+    if (!url) return null
+    if (url.includes("github.com")) return "GitHub"
+    if (url.endsWith(".pdf") || url.includes("sharepoint")) return "Report"
+    return "View"
+  }
+  
+  function typePill(type) {
+    if (type === "ds") return "Data Science"
+    if (type === "swe") return "Software Engineering"
+    return "Project"
+  }
+
   // filter + sort by date desc
   const filtered = React.useMemo(() => {
     return all
@@ -347,10 +360,10 @@ function ProjectsSection() {
   return (
     <Section id="projects" title="Projects">
       {/* Tabs */}
-      <div className="mb-6 flex items-center gap-3">
+      <div className="mb-6 flex items-center gap-2 md:gap-3">
         <button
           onClick={() => setTab("ds")}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/40 ${
             tab === "ds"
               ? "bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white"
               : "bg-white/5 text-white/70 hover:text-white"
@@ -360,7 +373,7 @@ function ProjectsSection() {
         </button>
         <button
           onClick={() => setTab("swe")}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/40 ${
             tab === "swe"
               ? "bg-gradient-to-r from-fuchsia-400 to-purple-500 text-white"
               : "bg-white/5 text-white/70 hover:text-white"
@@ -374,51 +387,73 @@ function ProjectsSection() {
       <div className="grid md:grid-cols-2 gap-5">
         {visible.map((p) => (
           <article
-            key={p.title}
-            className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/[0.07] transition-colors"
-          >
-            {p.image ? (
-              <img src={p.image} alt={`${p.title} preview`} className="h-44 w-full object-cover" />
-            ) : (
-              <div className="h-44 w-full bg-white/5" />
-            )}
-            <div className="p-4">
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="text-lg font-semibold bg-gradient-to-r from-cyan-300 to-fuchsia-300 bg-clip-text text-transparent">
-                  {p.title}
-                </h3>
-                {p.date && (
-                  <span className="text-[11px] text-white/50 whitespace-nowrap">
-                    {new Date(p.date).toLocaleDateString(undefined, { year: "numeric", month: "short" })}
-                  </span>
-                )}
-              </div>
-
-              <p className="text-sm text-white/75 mt-1">{p.blurb}</p>
-
-              <div className="mt-3 flex flex-wrap gap-2">
-                {p.tech?.map((t) => (
-                  <span
-                    key={t}
-                    className="text-xs rounded-md bg-white/10 px-2.5 py-1 text-white/80 border border-white/10"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              {p.link && (
+          key={p.title}
+          className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.05] transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.07] hover:shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
+        >
+          {/* Image with subtle zoom + gradient overlay */}
+          {p.image ? (
+            <div className="relative h-44 w-full overflow-hidden">
+              <img
+                src={p.image}
+                alt={`${p.title} preview`}
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0c0d10]/60 via-transparent to-transparent opacity-60" />
+            </div>
+          ) : (
+            <div className="h-44 w-full bg-white/5" />
+          )}
+        
+          <div className="p-4">
+            {/* Title + date */}
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="text-lg font-semibold bg-gradient-to-r from-cyan-300 to-fuchsia-300 bg-clip-text text-transparent">
+                {p.title}
+              </h3>
+              {p.date && (
+                <span className="text-[11px] text-white/50 whitespace-nowrap">
+                  {new Date(p.date).toLocaleDateString(undefined, { year: "numeric", month: "short" })}
+                </span>
+              )}
+            </div>
+        
+            {/* Blurb */}
+            <p className="text-sm text-white/75 mt-1">{p.blurb}</p>
+        
+            {/* Tech badges */}
+            <div className="mt-3 flex flex-wrap gap-2">
+              {p.tech?.map((t) => (
+                <span
+                  key={t}
+                  className="text-[11px] rounded-md border border-white/10 bg-white/10 px-2 py-1 text-white/80"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+        
+            {/* Links row */}
+            {p.link && (
+              <div className="mt-3">
                 <a
                   href={p.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1 text-sm mt-3 text-cyan-300 hover:text-cyan-200"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-cyan-300 hover:text-cyan-200 hover:bg-white/10 transition-colors"
                 >
-                  View <ArrowRight size={14} />
+                  {linkLabel(p.link)} <ExternalLink size={14} />
                 </a>
-              )}
-            </div>
-          </article>
+              </div>
+            )}
+          </div>
+        
+          {/* Subtle gradient border glow on hover */}
+          <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className={`absolute inset-x-0 -bottom-px h-[1.5px] bg-gradient-to-r
+              ${p.type === "ds" ? "from-cyan-400 via-fuchsia-400 to-purple-500" : "from-fuchsia-400 via-purple-400 to-cyan-400"}`} />
+          </div>
+        </article>
         ))}
       </div>
 
@@ -428,7 +463,7 @@ function ProjectsSection() {
           <button
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
-            className={`px-3 py-1.5 rounded-lg text-sm border ${
+            className={`px-3 py-1.5 rounded-lg text-sm border transition-colors ${
               page === 1
                 ? "border-white/10 text-white/30 cursor-not-allowed"
                 : "border-white/10 text-white/80 hover:bg-white/5"
