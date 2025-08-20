@@ -492,7 +492,7 @@ export default function Page() {
               I enjoy turning messy data into clean, practical tools and building software that solves real-world problems.
             </p>
             <p className="text-white/80 leading-relaxed mb-4">
-              Outside of tech, I’m often on a court playing soccer, basketball, or badminton, and recently I’ve been exploring new sports like paddle and pickleball. 
+              Outside of tech, I’m often on a court playing soccer, basketball, or badminton, and recently I’ve been exploring new sports like padel and pickleball. 
               I like taking on challenges both in and out of tech.
             </p>
 
