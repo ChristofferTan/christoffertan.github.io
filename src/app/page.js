@@ -3,7 +3,7 @@
 import React from "react"
 import {
   Github, Linkedin, Mail, ArrowRight, Briefcase, GraduationCap,
-  LineChart, BrainCircuit, Code2, Server, FileText, Menu
+  LineChart, BrainCircuit, Code2, Server, FileText, Menu, X
 } from "lucide-react"
 
 /**
