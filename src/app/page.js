@@ -206,8 +206,7 @@ function SiteHeader() {
     { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
-    // { label: "Blog", href: "/blog" },      // ← add later
-    // { label: "Contact", href: "/contact" } // ← add later
+    { label: "Travel", href: "/travel" },
   ]
 
   const [open, setOpen] = React.useState(false)
@@ -291,9 +290,6 @@ function SiteHeader() {
                 </a>
               </li>
             ))}
-            {/* Future pages (uncomment later) */}
-            {/* <li><a href="/blog" className="block w-full rounded-lg px-3 py-2 hover:bg-white/5 hover:text-white">Blog</a></li>
-            <li><a href="/contact" className="block w-full rounded-lg px-3 py-2 hover:bg-white/5 hover:text-white">Contact</a></li> */}
           </ul>
 
           <div className="mt-3 flex items-center gap-3">
@@ -528,6 +524,7 @@ export default function Page() {
             ["Skills", "#skills"],
             ["Experience", "#experience"],
             ["Projects", "#projects"],
+            ["Travel", "/travel"],
           ].map(([label, href]) => (
             <a key={label} href={href} className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white hover:bg-white/10">
               {label} <ArrowRight size={16} />
@@ -563,7 +560,8 @@ export default function Page() {
               I enjoy turning messy data into clean, practical tools and building software that solves real-world problems.
             </p>
             <p className="text-white/80 leading-relaxed mb-4">
-              Outside of tech, I’m often on a court playing soccer, basketball, or badminton, and recently I’ve been exploring new sports like padel and pickleball. 
+              Outside of tech, I’m often on a court playing soccer, basketball, or badminton, and recently I’ve been exploring new sports like padel and pickleball.  
+              I love travelling and have visited 12 countries so far, with many more on my list.  
               I like taking on challenges both in and out of tech.
             </p>
 
