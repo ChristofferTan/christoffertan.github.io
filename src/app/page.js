@@ -36,9 +36,9 @@ export const EXPERIENCE = [
     org: "Royal Bank of Canada (RBC)",
     time: "Toronto, ON | May 2025 – Aug. 2025",
     bullets: [
-      "Designed and implemented an NLP-based pipeline using TF-IDF, spaCy, and fuzzy matching to identify unauthorized IT assets, enhancing compliance and risk controls.",
-      "Developed and evaluated statistical models to uncover operational risk trends, supporting data-driven decision-making across business units.",
-      "Cleaned, transformed, and analyzed large-scale datasets using SQL and Python, translating insights into executive dashboards to inform strategic actions."
+      "Developed an NLP pipeline in Python to detect unauthorized IT assets by ranking the top 3 closest matches from 1,000+ records, reducing compliance review time by 80%.",
+      "Built an executive dashboard using Python and SQL to track the top 10 high-risk hardware and software assets, enabling leaders to prioritize remediation and reduce potential downtime risks for 5,000+ employees.",
+      "Created an operational risk metrics dashboard in Kibana to monitor key performance indicators and generate reports for leadership, improving visibility into risk trends across 10+ teams."
     ],
     tools: ["Python", "SQL", "NLP", "Kibana", "Data Visualization"],
   },
@@ -48,9 +48,9 @@ export const EXPERIENCE = [
     org: "Bang Jamin",
     time: "Jakarta, Indonesia | Jun. 2024 – Aug. 2024",
     bullets: [
-      "Built and optimized REST APIs for a car dealer dashboard, serving 1,000+ users using TypeScript and Node.js.",
-      "Automated insurance policy generation by integrating external APIs and querying MongoDB, improving efficiency by 60%.",
-      "Designed and implemented API tests using Jest and documented APIs using Swagger."
+      "Engineered and optimized REST APIs for a high-traffic car dealer dashboard using TypeScript and Node.js, delivering faster load times and seamless data retrieval for 1,000+ active users.",
+      "Streamlined insurance policy generation by integrating multiple external APIs with MongoDB queries, cutting manual processing steps in half and boosting efficiency by 60%.",
+      "Established an API testing framework with Jest and produced comprehensive Swagger documentation, enabling new developers to contribute productively within their first week."
     ],
     tools: ["TypeScript", "Node.js", "MongoDB", "Jest", "Swagger"],
   },
@@ -60,25 +60,13 @@ export const EXPERIENCE = [
     type: "academic",
     role: "Teaching Assistant",
     org: "University of Toronto",
-    time: "Toronto, ON | Sept. 2024 – Apr. 2026",
+    time: "Toronto, ON | Sept. 2024 – Present",
     bullets: [
-      "STA130: Intro to Statistical Reasoning and Data Science (Fall 2024, Winter 2026)",
-      "STA237: Probability, Statistics and Data Analysis I (Fall 2025)",
-      "MAT135: Calculus I (Fall 2025)",
-      "MAT136: Calculus II (Winter 2026)"
+      "Supporting instruction for 1,000+ students per course across STA130: Introduction to Data Science, STA237: Probability & Statistics, MAT135: Calculus I, and MAT136: Calculus II",
+      "Teaching practical data skills using R and Python, focusing on visualization, wrangling, and statistical modeling.",
+      "Evaluating weekly assignments and exams with consistent grading standards to ensure fairness and clarity of feedback."
     ],
     tools: ["R", "Python", "Communication", "Probability", "Mathematics"],
-  },
-  {
-    type: "academic",
-    role: "Research Assistant",
-    org: "Prof. Meredith Franklin, University of Toronto",
-    time: "Toronto, ON | Jun. 2025 – Aug. 2025",
-    bullets: [
-      "Applied deep learning techniques to satellite image downscaling for aerosol data using ConvLSTM-based VAE models.",
-      "Processed seasonal climate datasets (G5NR, MERRA-2), improving the spatial resolution of atmospheric aerosol predictions."
-    ],
-    tools: ["Python", "TensorFlow", "Deep Learning"],
   },
   {
     type: "academic",
@@ -86,8 +74,9 @@ export const EXPERIENCE = [
     org: "Prof. Yang Xu, University of Toronto",
     time: "Toronto, ON | Sept. 2025 – Present",
     bullets: [
-      "Conducting research on talent perception in sports using NLP techniques.",
-      "Building models to analyze large-scale textual data from media sources, focusing on sentiment, framing, and athlete representation."
+      "Collaborating with the Department of Kinesiology & Physical Education to examine how “talent” is represented in sports language using computational and linguistic analysis.",
+      "Designing and implementing an NLP pipeline with large language models (Phi-3 Mini, Gemini AI) to extract and classify traits from 500+ NHL player reports across psychological, physical, technical, and tactical categories.",
+      "Applying BERT-based embeddings and dimensionality-reduction techniques to visualize semantic clusters and identify position-specific patterns in evaluator language, aiming to enhance early-stage scouting analytics."
     ],
     tools: ["Python", "NLP", "Machine Learning", "Sports Analytics"],
   },
